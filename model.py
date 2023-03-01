@@ -14,6 +14,15 @@ class Model:
         self.last_reward = None
         self.state = [2, 2]
         self.action = 2
+
+        # if we have a qtable, load it
+        try:
+            with open("qtable.txt", "r") as f:
+                for i in range(15):
+                    for j in range(15):
+                        self.qtable[i][j] = [float(x) for x in f.readline().split()]
+        except:
+            pass
         
     def get_action(self, state1, state2):
         # state should be the distance from left cone, from 0 to 200
