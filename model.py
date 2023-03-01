@@ -12,7 +12,7 @@ class Model:
         self.last_state = None
         self.last_action = None
         self.last_reward = None
-        self.state = [2, 2]
+        self.state = [7, 7]
         self.action = 2
 
         # if we have a qtable, load it
